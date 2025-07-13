@@ -1,0 +1,29 @@
+{
+  "name": "fluxa-language-api",
+  "version": "0.0.1",
+  "description": "A NodeJS API application to support Fluxa's language trainer features",
+  "main": "index.js",
+  "scripts": {
+    "dev": "ts-node src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js"
+  },
+  "author": "Dmytro Torianik",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.0.13",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mongoose": "^8.12.1",
+    "uuid": "^11.1.0",
+    "validator": "^13.12.0"
+  }
+}
