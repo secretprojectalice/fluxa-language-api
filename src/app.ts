@@ -4,6 +4,7 @@ import bodyParser from "body-parser"
 import cors from "cors"
 import dotenv from "dotenv"
 import languageItemRoutes from "./routes/languageItemRoutes"
+import exercisesRoutes from "./routes/exercisesRoutes"
 
 dotenv.config()
 
@@ -27,8 +28,9 @@ app.use((req, res, next) => {
 })
 
 const apiRouter = express.Router()
-apiRouter.use("/language", languageItemRoutes)
-app.use("/api/v1", apiRouter)
+apiRouter.use(languageItemRoutes)
+apiRouter.use(exercisesRoutes)
+app.use("/api/v1/language", apiRouter)
 
 mongoose.connect(process.env.MONGODB_URI as string)
     .then(() => console.log("Fluxa MongoDB connected"))

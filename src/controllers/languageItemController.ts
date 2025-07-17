@@ -17,8 +17,7 @@ export const createLanguageItem = async (req: Request, res: Response) => {
 
 export const getLanguageItems = async (req: Request, res: Response) => {
     try {
-        // Simulate slow API response
-        await new Promise(resolve => setTimeout(resolve, 2000))
+        // await new Promise(resolve => setTimeout(resolve, 2000))
 
         const page = parseInt(req.query.page as string) || 1
         const limit = parseInt(req.query.limit as string) || 10
