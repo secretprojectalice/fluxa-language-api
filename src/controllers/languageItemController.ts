@@ -42,7 +42,8 @@ export const getLanguageItems = async (req: Request, res: Response) => {
 
         res.json({
             items,
-            total
+            total,
+            test: "OK"
         })
     } catch (error) {
         res.status(500).json({ error: (error as Error).message })
