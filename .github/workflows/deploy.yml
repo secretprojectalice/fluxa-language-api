@@ -25,10 +25,10 @@ jobs:
                     git pull origin main
                     npm install
                     npm run build
-                    echo "NODE_ENV=${{ secrets.NODE_ENV }}" > .env
-                    echo "PORT=${{ secrets.PORT }}" > .env
-                    echo "FLUXA_UI_APP_URL=${{ secrets.FLUXA_UI_APP_URL }}" > .env
-                    echo "MONGODB_URI=${{ secrets.MONGODB_URI }}" > .env
+                    echo "NODE_ENV=${{ secrets.NODE_ENV }}" >> .env
+                    echo "PORT=${{ secrets.PORT }}" >> .env
+                    echo "FLUXA_UI_APP_URL=${{ secrets.FLUXA_UI_APP_URL }}" >> .env
+                    echo "MONGODB_URI=${{ secrets.MONGODB_URI }}" >> .env
                     pm2 restart fluxa-language-api || pm2 start dist/server.js --name "fluxa-language-api"
                     pm2 save
                   EOF
